@@ -11,14 +11,18 @@
 type TaskDot = { label: string; x: number; y: number };
 
 const TASKS: TaskDot[] = [
-  { label: 'Test scaffolding', x: 18, y: 82 },
-  { label: 'Code explanation', x: 12, y: 78 },
-  { label: 'Refactor with tests', x: 65, y: 70 },
-  { label: 'Boilerplate', x: 22, y: 88 },
-  { label: 'Production migration', x: 88, y: 28 },
-  { label: 'Security-critical code', x: 92, y: 22 },
-  { label: 'Brainstorming', x: 14, y: 40 },
-  { label: 'Architecture decisions', x: 78, y: 38 },
+  // top-left (high accuracy, low stakes) — go for it
+  { label: 'Boilerplate', x: 18, y: 88 },
+  { label: 'Test scaffolding', x: 38, y: 78 },
+  { label: 'Code explanation', x: 12, y: 62 },
+  // bottom-left (lower accuracy, low stakes) — try it
+  { label: 'Brainstorming', x: 22, y: 32 },
+  // top-right (high accuracy, high stakes) — use with review
+  { label: 'Refactor with tests', x: 62, y: 75 },
+  // bottom-right (lower accuracy, high stakes) — avoid
+  { label: 'Architecture decisions', x: 62, y: 38 },
+  { label: 'Production migration', x: 75, y: 22 },
+  { label: 'Security-critical code', x: 92, y: 12 },
 ];
 
 export function TrustStakeMatrix() {

@@ -1,6 +1,6 @@
 # Building with AI — Learning Session
 
-A small fullstack app for running a ~90-minute workshop on LLMs and AI agents.
+A small fullstack app for running a ~60-minute workshop on LLMs and AI agents.
 
 Two parts:
 1. **A 12–15 minute presentation** that builds a mental model: LLM → Agent → how to use & build with it.
@@ -36,14 +36,26 @@ ai-app-learning-session/
 ## Setup
 
 ```bash
-# Backend
+# 1. Clone
+git clone git@github.com:antoinebcx/ai-app-learning-session.git
+cd ai-app-learning-session
+
+# 2. Backend
 cd backend
-cp .env.example .env       # then edit .env and paste your OPENAI_API_KEY
+cp .env.example .env       # then edit .env (see below)
 npm install
 
-# Frontend (in another terminal)
+# 3. Frontend (in another terminal)
 cd ../frontend
 npm install
+```
+
+Your `backend/.env` should look like this:
+
+```bash
+OPENAI_API_KEY=sk-...        # required — your OpenAI API key
+PORT=8787                    # optional — backend port
+DEFAULT_MODEL=gpt-5.4-mini   # optional — model used for /api/chat
 ```
 
 ## Run it

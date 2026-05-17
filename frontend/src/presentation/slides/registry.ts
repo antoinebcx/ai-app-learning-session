@@ -7,6 +7,7 @@ import type { ComponentType } from 'react';
 import type { SlideMeta } from '../Slide';
 
 import { Intro } from './intro';
+import { Slide_1_0 } from './s1_0_what_is_ml';
 import { Slide_1_1 } from './s1_1_next_token';
 import { Slide_1_2 } from './s1_2_tokens';
 import { Slide_1_3 } from './s1_3_context';
@@ -28,6 +29,7 @@ export type SlideEntry = {
 
 export const slides: SlideEntry[] = [
   { Component: Intro,      meta: { id: 'intro',  section: 'intro' },                                title: 'Building with AI, from first principles.' },
+  { Component: Slide_1_0,  meta: { id: '1-0',    section: '1', sectionLabel: 'LLM',  number: '1.0' }, title: "What's an LLM, really?" },
   { Component: Slide_1_1,  meta: { id: '1-1',    section: '1', sectionLabel: 'LLM',  number: '1.1' }, title: 'Hello, model.' },
   { Component: Slide_1_2,  meta: { id: '1-2',    section: '1', sectionLabel: 'LLM',  number: '1.2' }, title: 'Tokens, not letters.' },
   { Component: Slide_1_3,  meta: { id: '1-3',    section: '1', sectionLabel: 'LLM',  number: '1.3' }, title: 'Context window — the working memory.' },

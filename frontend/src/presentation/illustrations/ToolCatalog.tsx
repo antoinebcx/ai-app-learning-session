@@ -19,10 +19,10 @@ const BUILTIN: Tool[] = [
 ];
 
 const CUSTOM: Tool[] = [
-  { name: 'lookup_order',           description: 'Read from your orders table.',           icon: <DotIcon /> },
-  { name: 'issue_refund',           description: 'Trigger a refund in your payments API.', icon: <DotIcon /> },
-  { name: 'send_slack_message',     description: 'Notify a channel from the agent.',       icon: <DotIcon /> },
-  { name: 'summarize_findings',     description: 'Structured-output sink for research.',   icon: <DotIcon /> },
+  { name: 'lookup_order',       description: 'Read from your orders table.',           icon: <DatabaseIcon /> },
+  { name: 'issue_refund',       description: 'Trigger a refund in your payments API.', icon: <CurrencyIcon /> },
+  { name: 'send_slack_message', description: 'Notify a channel from the agent.',       icon: <ChatIcon /> },
+  { name: 'summarize_findings', description: 'Structured-output sink for research.',   icon: <ListIcon /> },
 ];
 
 export function ToolCatalog() {
@@ -103,8 +103,39 @@ function ImageIcon() {
     </svg>
   );
 }
-function DotIcon() {
+function DatabaseIcon() {
   return (
-    <span className="inline-block w-2 h-2 rounded-full bg-amber-500 mt-1.5" />
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <ellipse cx="8" cy="4" rx="5" ry="1.8" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M3 4 V8 C3 9 5.2 10 8 10 C10.8 10 13 9 13 8 V4" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M3 8 V12 C3 13 5.2 14 8 14 C10.8 14 13 13 13 12 V8" stroke="currentColor" strokeWidth="1.5" />
+    </svg>
+  );
+}
+function CurrencyIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <circle cx="8" cy="8" r="6" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M8 4.5 V11.5 M10 6 C10 5.2 9 5 8 5 C7 5 6 5.5 6 6.5 C6 8.5 10 7.5 10 9.5 C10 10.5 9 11 8 11 C7 11 6 10.8 6 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+function ChatIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="M2.5 4 H13.5 V11 H7 L4.5 13 V11 H2.5 Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+    </svg>
+  );
+}
+function ListIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <line x1="5" y1="4" x2="13" y2="4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="5" y1="8" x2="13" y2="8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="5" y1="12" x2="10" y2="12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx="2.8" cy="4" r="0.9" fill="currentColor" />
+      <circle cx="2.8" cy="8" r="0.9" fill="currentColor" />
+      <circle cx="2.8" cy="12" r="0.9" fill="currentColor" />
+    </svg>
   );
 }

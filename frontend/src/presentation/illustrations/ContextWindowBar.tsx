@@ -26,7 +26,7 @@ const WINDOWS = [
   { label: '1M', value: 1_000_000 },
 ];
 
-const AXIS_TICKS = [100, 1_000, 10_000, 100_000, 1_000_000, 10_000_000];
+const AXIS_TICKS = [10, 100, 1_000, 10_000, 100_000, 1_000_000, 10_000_000];
 const MIN_LOG = Math.log10(AXIS_TICKS[0]);
 const MAX_LOG = Math.log10(AXIS_TICKS[AXIS_TICKS.length - 1]);
 
@@ -91,8 +91,8 @@ export function ContextWindowBar() {
           style={{ left: `${cutoff}%` }}
         >
           <div className="absolute inset-y-0 left-0 w-0.5 bg-accent" />
-          <div className="absolute -top-1 left-1/2 -translate-x-1/2 text-[10px] font-mono text-accent whitespace-nowrap">
-            ↓ window: {w.label}
+          <div className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-[10px] font-mono text-accent whitespace-nowrap">
+            window: {w.label}
           </div>
         </div>
 

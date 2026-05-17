@@ -55,14 +55,16 @@ function PrincipleCard({
   body,
 }: Principle & { index: number }) {
   return (
-    <div className="rounded-lg border border-line bg-surface p-4 hover:border-accent/40 transition">
-      <div className="flex items-baseline gap-2">
-        <span className="text-[10px] font-mono text-accent tabular-nums">
+    <div className="group rounded-lg border border-line bg-surface p-4 hover:border-accent/40 hover:shadow-card transition">
+      <div className="flex items-start gap-3">
+        <span className="shrink-0 w-7 h-7 rounded-md bg-accent-soft text-accent font-mono text-sm font-semibold flex items-center justify-center group-hover:bg-accent group-hover:text-white transition">
           {String(index).padStart(2, '0')}
         </span>
-        <h3 className="text-sm font-semibold text-ink">{title}</h3>
+        <div className="min-w-0">
+          <h3 className="text-sm font-semibold text-ink leading-snug">{title}</h3>
+          <p className="mt-1.5 text-xs text-ink-soft leading-relaxed">{body}</p>
+        </div>
       </div>
-      <p className="mt-1.5 text-xs text-ink-soft leading-relaxed">{body}</p>
     </div>
   );
 }

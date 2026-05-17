@@ -81,8 +81,13 @@ export function AgentLoopDiagram() {
   return (
     <div className="rounded-xl border border-line bg-surface p-6 sm:p-8 shadow-card">
       <div className="flex items-center justify-between mb-4">
-        <div className="text-[10px] font-semibold uppercase tracking-wider text-ink-muted">
-          One agent turn
+        <div>
+          <div className="text-[10px] font-semibold uppercase tracking-wider text-ink-muted">
+            One agent turn
+          </div>
+          <div className="mt-1 text-xs font-mono text-ink-soft h-4">
+            {phaseLabel(phase)}
+          </div>
         </div>
         <Button size="sm" variant="secondary" onClick={() => setRun((r) => r + 1)}>
           Replay
@@ -237,6 +242,19 @@ export function AgentLoopDiagram() {
       </p>
     </div>
   );
+}
+
+function phaseLabel(p: Phase): string {
+  switch (p) {
+    case 'idle':        return '—';
+    case 'user-in':     return 'user message arrives';
+    case 'llm-1':       return 'LLM reasons';
+    case 'tool-call':   return 'LLM calls a tool';
+    case 'tool-run':    return 'tool runs';
+    case 'tool-return': return 'tool returns result';
+    case 'llm-2':       return 'LLM resumes';
+    case 'final':       return 'assistant replies';
+  }
 }
 
 function toneFill(tone: 'ink' | 'accent' | 'amber'): string {
