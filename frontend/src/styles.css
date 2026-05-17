@@ -1,0 +1,19 @@
+/*
+ * Global styles. Three lines of Tailwind directives generate every utility
+ * class, plus a small @layer base to wire up our chosen typography.
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-feature-settings: 'cv11', 'ss01';
+  }
+  body {
+    @apply bg-surface text-ink;
+  }
+  ::selection {
+    @apply bg-accent/15 text-ink;
+  }
+}

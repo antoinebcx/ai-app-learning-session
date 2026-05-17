@@ -1,0 +1,4 @@
+.DS_Store
+*.log
+
+# Per-package ignores live in backend/.gitignore and frontend/.gitignore.
